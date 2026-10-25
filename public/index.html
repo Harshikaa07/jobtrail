@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jobtrail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="auth" class="auth" hidden>
+  <form id="authForm" class="panel">
+    <h1>Jobtrail</h1>
+    <p class="muted">Keep every application, interview and offer in one place.</p>
+    <input id="name" placeholder="Your name" autocomplete="name" hidden>
+    <input id="email" type="email" placeholder="Email" autocomplete="email" required>
+    <input id="password" type="password" placeholder="Password (6+ characters)" autocomplete="current-password" required>
+    <p id="authErr" class="err" role="alert"></p>
+    <button class="btn primary" id="authBtn">Log in</button>
+    <p class="muted"><a href="#" id="toggle">New here? Create an account</a></p>
+  </form>
+</section>
+
+<main id="app" hidden>
+  <header class="top">
+    <h1>Jobtrail</h1>
+    <input id="search" type="search" placeholder="Search company or role" aria-label="Search">
+    <button class="btn primary" id="addBtn">Add application</button>
+    <button class="btn" id="logout">Log out</button>
+  </header>
+  <section class="pipeline" aria-label="Pipeline summary">
+    <div class="bar" id="bar"></div>
+    <div class="legend" id="legend"></div>
+  </section>
+  <div class="board" id="board"></div>
+</main>
+
+<dialog id="dlg">
+  <form id="appForm" class="panel">
+    <h2 id="dlgTitle">New application</h2>
+    <label>Company<input id="f_company" required maxlength="120"></label>
+    <label>Role<input id="f_role" required maxlength="120"></label>
+    <div class="row">
+      <label>Stage
+        <select id="f_status"><option>Applied</option><option>Interview</option><option>Offer</option><option>Rejected</option></select>
+      </label>
+      <label>Applied on<input id="f_applied_on" type="date"></label>
+    </div>
+    <label>Posting link<input id="f_link" type="url" placeholder="https://"></label>
+    <label>Notes<textarea id="f_notes" rows="3"></textarea></label>
+    <div class="row end">
+      <button type="button" class="btn" id="cancel">Cancel</button>
+      <button class="btn primary">Save application</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
