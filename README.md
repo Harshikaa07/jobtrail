@@ -25,4 +25,4 @@ A job application tracker. Drag applications between Applied, Interview, Offer a
 | PUT | /api/applications/:id | Update one |
 | DELETE | /api/applications/:id | Delete one |
 
-Live demo: _add your link here_
+Live demo: https://jobtrail-cwsx.onrender.com/
